@@ -20,24 +20,24 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
 
     --   use 'sainnhe/sonokai'
-
     -- bufferline
-    use {'akinsho/bufferline.nvim',
-    tag = "v2.*",
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function()
-        require('bufferline').setup{}
-    end
-}
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            require('bufferline').setup{}
+        end
+    }
 
--- startup screen
-use 'leslie255/aleph-nvim'
+    -- startup screen
+    use 'leslie255/aleph-nvim'
 
--- gitsigns
-use {
-    'lewis6991/gitsigns.nvim',
-    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-}
+    -- gitsigns
+    use {
+        'lewis6991/gitsigns.nvim',
+        -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+    }
 
 
 end)

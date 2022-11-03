@@ -9,7 +9,7 @@ vim.opt.updatetime     = 100
 -- vim.opt.cursorline     = true
 vim.opt.autowrite      = true
 if (vim.fn.has('termguicolors') == 1) then
-	vim.opt.termguicolors = true
+    vim.opt.termguicolors = true
 end
 -- tabs
 vim.opt.autoindent  = true
