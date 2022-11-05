@@ -63,8 +63,8 @@ end
 keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
 -- Formatting selected code.
-keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
-keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+-- keyset("x", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
+-- keyset("n", "<leader>f", "<Plug>(coc-format-selected)", { silent = true })
 
 -- Apply AutoFix to problem on the current line.
 keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)

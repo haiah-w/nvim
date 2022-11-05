@@ -1,16 +1,29 @@
-require("toggleterm").setup()
+local toggleterm = require("toggleterm")
 
-local keyset = vim.keymap.set
+toggleterm.setup {
+    shade_terminal = false
+}
 
--- open new terminal
-keyset('n', '<A-t>', ':ToggleTerm<CR>')
+local terminal = require('toggleterm.terminal').Terminal
 
--- tnoremap mode
-keyset('t', '<esc>', '<C-\\><C-n>')
-keyset('t', '<A-t>', 'exit<CR>')
+local lazygit = terminal:new({
+    cmd = "lazygit",
+    dir = "git_dir",
+    direction = "float",
+    float_opts = {
+        border = "double",
+    },
+    -- function to run on opening the terminal
+    on_open = function(term)
+        vim.cmd("startinsert!")
+        vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+    end,
+    -- function to run on closing the terminal
+    on_close = function(term)
+        vim.cmd("startinsert!")
+    end,
+})
 
--- switch window
-keyset('t', '<A-h>', '<C-\\><C-N><C-w>h')
-keyset('t', '<A-j>', '<C-\\><C-N><C-w>j')
-keyset('t', '<A-k>', '<C-\\><C-N><C-w>k')
-keyset('t', '<A-l>', '<C-\\><C-N><C-w>l')
+function _lazygit_toggle()
+    lazygit:toggle()
+end
