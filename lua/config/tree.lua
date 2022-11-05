@@ -22,6 +22,17 @@ require("nvim-tree").setup({
             list = {
                 { key = "u", action = "dir_up" },
                 { key = "l", action = "open" },
+                { key = "q", action = "close" }, -- close tree
+                { key = "W", action = "collapse_all" },
+                { key = "E", action = "expand_all" },
+                { key = "y", action = "copy_name" },
+                { key = "Y", action = "copy_path" },
+                { key = "Y", action = "copy_absolute_path" },
+                { key = "<C-l>", action = "vsplit" },
+                { key = "<C-j>", action = "split" },
+                { key = "f", action = "live_filter" },
+                { key = "F", action = "clear_live_filter" },
+                { key = "p", action = "preview" },
             },
         },
     },
@@ -29,7 +40,6 @@ require("nvim-tree").setup({
         group_empty = true,
     },
     filters = {
-        dotfiles = true,
+        dotfiles = false,
     },
 })
-

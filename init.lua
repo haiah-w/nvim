@@ -1,6 +1,5 @@
 -- basic setting
-require "core.options"
-require "core.keymaps"
+require "core.init"
 
 -- plugins
 require "plugins"

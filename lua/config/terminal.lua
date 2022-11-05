@@ -9,7 +9,7 @@ keyset('n', '<A-t>', ':ToggleTerm<CR>')
 keyset('t', '<esc>', '<C-\\><C-n>')
 keyset('t', '<A-t>', 'exit<CR>')
 
--- switch window 
+-- switch window
 keyset('t', '<A-h>', '<C-\\><C-N><C-w>h')
 keyset('t', '<A-j>', '<C-\\><C-N><C-w>j')
 keyset('t', '<A-k>', '<C-\\><C-N><C-w>k')

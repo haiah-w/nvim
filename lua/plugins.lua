@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- nvim-tree
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -15,17 +16,16 @@ return require('packer').startup(function(use)
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
-    use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- bufferline
-    use {
-        'akinsho/bufferline.nvim',
-        tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons',
+    use({
+        'noib3/nvim-cokeline',
+        requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
         config = function()
-            require('bufferline').setup{}
+            require('cokeline').setup()
         end
-    }
+    })
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
     -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
     -- coc.nvim
-    use {'neoclide/coc.nvim', branch = 'release'}
+    use { 'neoclide/coc.nvim', branch = 'release' }
 
     -- gitsigns
     use {
@@ -48,8 +48,8 @@ return require('packer').startup(function(use)
     -- colors
     use "rafamadriz/neon"
     use 'NvChad/nvim-colorizer.lua' -- color for css
-    use 'xiyaowong/nvim-transparent'    -- background
+    use 'xiyaowong/nvim-transparent' -- background
 
-    -- terminal 
+    -- terminal
     use 'akinsho/toggleterm.nvim'
 end)
