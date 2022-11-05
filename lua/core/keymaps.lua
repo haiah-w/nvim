@@ -10,20 +10,21 @@ vim.keymap.set('n', '<C-s>', ':w<CR>gg=G')
 vim.keymap.set('n', '<C-q>', ':q<CR>')
 
 -- insert module up down left right
-vim.keymap.set('i', '<C-h>', '<Left>')
-vim.keymap.set('i', '<C-j>', '<Down>')
-vim.keymap.set('i', '<C-k>', '<Up>')
-vim.keymap.set('i', '<C-l>', '<Right>')
+-- vim.keymap.set('i', '<C-h>', '<Left>')
+-- vim.keymap.set('i', '<C-j>', '<Down>')
+-- vim.keymap.set('i', '<C-k>', '<Up>')
+-- vim.keymap.set('i', '<C-l>', '<Right>')
 
 -- window
-vim.keymap.set('n', '<C-h>', '<C-w>h')
-vim.keymap.set('n', '<C-j>', '<C-w>j')
-vim.keymap.set('n', '<C-k>', '<C-w>k')
-vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<A-h>', '<C-w>h')
+vim.keymap.set('n', '<A-j>', '<C-w>j')
+vim.keymap.set('n', '<A-k>', '<C-w>k')
+vim.keymap.set('n', '<A-l>', '<C-w>l')
 
--- tab
-vim.keymap.set('n', '{', '<cmd>bp<cr>', {})
-vim.keymap.set('n', '}', '<cmd>bn<cr>', {})
+
+vim.keymap.set('n', '<A-i>', '<cmd>bp<cr>')
+vim.keymap.set('n', '<A-o>', '<cmd>bn<cr>')
 
 -- LEADEUR
 vim.g.mapleader=';'
+

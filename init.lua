@@ -1,9 +1,13 @@
-
+-- basic setting
 require "core.options"
 require "core.keymaps"
+
+-- plugins
 require "plugins"
-require "config.terminal"
-require "config.tree"
-require "config.treesitter"
-require "config.bufferline"
-require "config.gitsigns"
+require "config.init"
+
+-- colors
+require "colors.init"
+
+-- coc extension
+require "config.coc"

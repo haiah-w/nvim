@@ -1,0 +1,6 @@
+require "config.tree"
+require "config.treesitter"
+require "config.bufferline"
+require "config.gitsigns"
+require "config.terminal"
+require "config.statusline"

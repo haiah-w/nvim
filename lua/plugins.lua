@@ -7,8 +7,6 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    use 'numToStr/FTerm.nvim'
-
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -19,7 +17,6 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
 
-    --   use 'sainnhe/sonokai'
     -- bufferline
     use {
         'akinsho/bufferline.nvim',
@@ -29,9 +26,18 @@ return require('packer').startup(function(use)
             require('bufferline').setup{}
         end
     }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    -- use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+    -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    -- use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+    -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+    -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
-    -- startup screen
-    use 'leslie255/aleph-nvim'
+    -- coc.nvim
+    use {'neoclide/coc.nvim', branch = 'release'}
 
     -- gitsigns
     use {
@@ -39,5 +45,11 @@ return require('packer').startup(function(use)
         -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
     }
 
+    -- colors
+    use "rafamadriz/neon"
+    use 'NvChad/nvim-colorizer.lua' -- color for css
+    use 'xiyaowong/nvim-transparent'    -- background
 
+    -- terminal 
+    use 'akinsho/toggleterm.nvim'
 end)

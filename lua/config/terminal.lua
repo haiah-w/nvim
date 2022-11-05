@@ -1,26 +1,16 @@
-require'FTerm'.setup({
-    border = 'double',
-    dimensions  = {
-        height = 0.7,
-        width = 0.6,
-    },
-    cmd = os.getenv('bash')
-})
+require("toggleterm").setup()
 
--- Example keybindings
-vim.keymap.set('n', '<A-t>', '<CMD>lua require("FTerm").toggle()<CR>')
-vim.keymap.set('t', '<A-t>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+local keyset = vim.keymap.set
 
---local fterm = require("FTerm")
---
---local gitui = fterm:new({
---        ft = 'fterm_gitui',
---        cmd =  'gitui',
---        dimensions = {
---                height = 0.7,
---                width = 0.6,
---        }
---})
---vim.keymap.set('n', '<A-g>', function()
---        gitui.toggle()
---end)
+-- open new terminal
+keyset('n', '<A-t>', ':ToggleTerm<CR>')
+
+-- tnoremap mode
+keyset('t', '<esc>', '<C-\\><C-n>')
+keyset('t', '<A-t>', 'exit<CR>')
+
+-- switch window 
+keyset('t', '<A-h>', '<C-\\><C-N><C-w>h')
+keyset('t', '<A-j>', '<C-\\><C-N><C-w>j')
+keyset('t', '<A-k>', '<C-\\><C-N><C-w>k')
+keyset('t', '<A-l>', '<C-\\><C-N><C-w>l')
