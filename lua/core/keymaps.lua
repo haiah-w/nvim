@@ -5,7 +5,7 @@ vim.keymap.set('i', '<C-u>', '<esc>viwU')
 vim.keymap.set('n', 'q', 'b')
 
 -- nomal
-vim.keymap.set('n', '<C-q>', ':bd<CR>')
+vim.keymap.set('n', '<C-q>', ':q<CR>')
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 
 -- insert module up down left right

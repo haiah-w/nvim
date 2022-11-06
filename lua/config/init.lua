@@ -19,6 +19,9 @@ end
 
 ----------------terminal----------------
 keyset('n', '<A-t>', '<Cmd>:ToggleTerm<CR>')
+keyset('n', '<leader>t', '<Cmd>:ToggleTerm size=40 direction=float<CR>')
+keyset("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+
 keyset('t', '<esc>', [[<C-\><C-n>]], opts)
 keyset('t', 'jk', [[<C-\><C-n>]], opts)
 keyset('t', '<A-h>', [[<Cmd>wincmd h<CR>]], opts)
@@ -26,4 +29,3 @@ keyset('t', '<A-j>', [[<Cmd>wincmd j<CR>]], opts)
 keyset('t', '<A-k>', [[<Cmd>wincmd k<CR>]], opts)
 keyset('t', '<A-l>', [[<Cmd>wincmd l<CR>]], opts)
 
-keyset("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
