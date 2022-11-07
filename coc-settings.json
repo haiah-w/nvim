@@ -42,6 +42,7 @@
         "variable": "\ue71b"
     },
     "coc.preferences.formatOnSaveFiletypes": [
+        "go",
         "lua",
         "javascript",
         "typescript",
