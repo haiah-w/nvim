@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- bufferline
+    use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
     use({
         'noib3/nvim-cokeline',
         requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
@@ -51,5 +52,24 @@ return require('packer').startup(function(use)
     use 'xiyaowong/nvim-transparent' -- background
 
     -- terminal
-    use 'akinsho/toggleterm.nvim'
+    use 'voldikss/vim-floaterm'
+
+    -- telescope search everything
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+-- or                            , branch = '0.1.x',
+  requires = { {'nvim-lua/plenary.nvim'} }
+}
+    -- todo comments
+use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim",
+  config = function()
+    require("todo-comments").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
 end)
