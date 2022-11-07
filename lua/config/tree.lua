@@ -5,7 +5,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- keymaps on tree
-vim.keymap.set('n', '<leader>f', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
 
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
