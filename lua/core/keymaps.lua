@@ -1,25 +1,26 @@
--- basic
-vim.keymap.set('i', 'jk', '<esc>')
-vim.keymap.set('v', 'jk', '<esc>')
-vim.keymap.set('i', '<C-u>', '<esc>viwU')
-vim.keymap.set('n', 'q', 'b')
-
--- nomal
-vim.keymap.set('n', '<C-q>', ':q<CR>')
-vim.keymap.set('n', '<C-s>', ':w<CR>')
-
--- insert module up down left right
--- vim.keymap.set('i', '<C-h>', '<Left>')
--- vim.keymap.set('i', '<C-j>', '<Down>')
--- vim.keymap.set('i', '<C-k>', '<Up>')
--- vim.keymap.set('i', '<C-l>', '<Right>')
-
--- window
-vim.keymap.set('n', '<A-h>', '<C-w>h')
-vim.keymap.set('n', '<A-j>', '<C-w>j')
-vim.keymap.set('n', '<A-k>', '<C-w>k')
-vim.keymap.set('n', '<A-l>', '<C-w>l')
-
+local keyset = vim.keymap.set
 
 -- LEADEUR
 vim.g.mapleader = ';'
+
+-- basic
+keyset('i', 'jk', '<esc>')
+keyset('v', 'jk', '<esc>')
+keyset('i', '<C-u>', '<esc>viwU')
+keyset('n', 'q', 'b')
+
+-- nomal
+keyset('n', '<C-q>', ':q<CR>')
+keyset('n', '<C-s>', ':w<CR>')
+
+-- insert module up down left right
+-- keyset('i', '<C-h>', '<Left>')
+-- keyset('i', '<C-j>', '<Down>')
+-- keyset('i', '<C-k>', '<Up>')
+-- keyset('i', '<C-l>', '<Right>')
+
+-- window
+keyset('n', '<A-h>', '<C-w>h')
+keyset('n', '<A-j>', '<C-w>j')
+keyset('n', '<A-k>', '<C-w>k')
+keyset('n', '<A-l>', '<C-w>l')

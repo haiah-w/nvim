@@ -14,9 +14,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- keymaps on tree
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>')
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
