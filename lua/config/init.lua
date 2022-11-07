@@ -4,6 +4,9 @@ require "config.bufferline"
 require "config.gitsigns"
 require "config.terminal"
 require "config.statusline"
+require "config.telescope"
+require "config.dashboard"
+require "config.auto-session"
 
 local keyset = vim.keymap.set
 ----------------buffer----------------
@@ -18,12 +21,13 @@ for i = 1, 9 do
 end
 
 ----------------terminal----------------
-keyset('n', '<A-t>', '<Cmd>:ToggleTerm<CR>')
-keyset('t', '<esc>', [[<C-\><C-n>]], opts)
-keyset('t', 'jk', [[<C-\><C-n>]], opts)
-keyset('t', '<A-h>', [[<Cmd>wincmd h<CR>]], opts)
-keyset('t', '<A-j>', [[<Cmd>wincmd j<CR>]], opts)
-keyset('t', '<A-k>', [[<Cmd>wincmd k<CR>]], opts)
-keyset('t', '<A-l>', [[<Cmd>wincmd l<CR>]], opts)
+keyset('n', '<leader>tt', ':FloatermNew<CR>')
+keyset({'n', 't', 'i'}, '<leader>tc', '<C-\\><C-n>:FloatermHide<CR>')
 
-keyset("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+
+--------------telescope-----------------
+local builtin = require('telescope.builtin')
+keyset('n', '<leader>ff', builtin.find_files, {})
+keyset('n', '<leader>fg', builtin.live_grep, {})
+keyset('n', '<leader>fb', builtin.buffers, {})
+keyset('n', '<leader>fh', builtin.help_tags, {})
