@@ -1,4 +1,4 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
+ua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
@@ -50,7 +50,23 @@ return require('packer').startup(function(use)
     use "rafamadriz/neon"
     use 'NvChad/nvim-colorizer.lua' -- color for css
     use 'xiyaowong/nvim-transparent' -- background
-
+    use 'glepnir/dashboard-nvim'
+use {
+  "lukas-reineke/indent-blankline.nvim",
+  config = function()
+    require("indent_blankline").setup { filetype_exclude = { "dashboard" }
+    }
+  end
+}
+use {
+  'rmagatti/auto-session',
+  config = function()
+    require("auto-session").setup {
+      log_level = "error",
+      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+    }
+  end
+}
     -- terminal
     use 'voldikss/vim-floaterm'
 
