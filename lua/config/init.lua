@@ -5,6 +5,8 @@ require "config.gitsigns"
 require "config.terminal"
 require "config.statusline"
 require "config.telescope"
+require "config.dashboard"
+require "config.auto-session"
 
 local keyset = vim.keymap.set
 ----------------buffer----------------
