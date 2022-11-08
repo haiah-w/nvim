@@ -89,6 +89,13 @@ return require('packer').startup(function(use)
             }
         end
     }
+    -- comment
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
     -- todo comments
     use {
         "folke/todo-comments.nvim",
@@ -101,4 +108,5 @@ return require('packer').startup(function(use)
             }
         end
     }
+    use { 'fatih/vim-go' }
 end)

@@ -14,13 +14,17 @@ keyset('n', '<C-q>', ':q<CR>')
 keyset('n', '<C-s>', ':w<CR>')
 
 -- insert module up down left right
--- keyset('i', '<C-h>', '<Left>')
--- keyset('i', '<C-j>', '<Down>')
--- keyset('i', '<C-k>', '<Up>')
--- keyset('i', '<C-l>', '<Right>')
+keyset({ 'i', 'n' }, '<C-h>', '<Left>')
+keyset({ 'i', 'n' }, '<C-j>', '<Down>')
+keyset({ 'i', 'n' }, '<C-k>', '<Up>')
+keyset({ 'i', 'n' }, '<C-l>', '<Right>')
 
 -- window
-keyset('n', '<A-h>', '<C-w>h')
-keyset('n', '<A-j>', '<C-w>j')
-keyset('n', '<A-k>', '<C-w>k')
-keyset('n', '<A-l>', '<C-w>l')
+keyset('n', '<C-h>', '<C-w>h')
+keyset('n', '<C-j>', '<C-w>j')
+keyset('n', '<C-k>', '<C-w>k')
+keyset('n', '<C-l>', '<C-w>l')
+
+-- global
+-- TODO close terminal fisrt then wqall
+keyset('n', '<leader>qa', '<Cmd>:wqall<CR>')
