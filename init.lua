@@ -10,3 +10,4 @@ require "colors.init"
 
 -- coc extension
 require "config.coc"
+-- TODO auto install coc-extensions
