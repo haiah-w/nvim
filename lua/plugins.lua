@@ -30,8 +30,9 @@ return require('packer').startup(function(use)
     }
 
     ---------------------------------------coc for lsp
-    use { 'neoclide/coc.nvim', branch = 'release' }
+    use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
     use { 'fatih/vim-go' }
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
     ---------------------------------------gitsigns
     use { 'lewis6991/gitsigns.nvim' }
@@ -94,7 +95,16 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-
+    -- for function signature
+    use {
+        "danymat/neogen",
+        config = function()
+            require('neogen').setup {}
+        end,
+        requires = "nvim-treesitter/nvim-treesitter",
+        -- Uncomment next line if you want to follow only stable versions
+        -- tag = "*"
+    }
     ---------------------------------------todo comments
     use {
         "folke/todo-comments.nvim",

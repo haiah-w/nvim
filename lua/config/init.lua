@@ -10,6 +10,7 @@ require "config.autosession"
 require "config.whichkey"
 require "config.comment"
 require "config.todo-comments"
+require "config.ufo"
 
 local keyset = vim.keymap.set
 
@@ -44,12 +45,29 @@ keyset('n', '<leader>sg', builtin.live_grep, {})
 keyset('n', '<leader>sb', builtin.buffers, {})
 keyset('n', '<leader>sh', builtin.help_tags, {})
 
----------------Go: <leader>g-----------------
+----------------Go: <leader>g-----------------
 keyset('n', '<leader>gt', '<Cmd>:GoTestFunc<CR>')
 
 ---------------lsp mapping--------------
---see coc.lua
+-- see coc.lua
 
 ---------------comment------------------
+keyset('n', '<leader>cf', '<Cmd>:Neogen<CR>')
 -- {'n','v'} line comment : gcc [you can always do gcc]
 -- {'n','v'} block comment : gbc
+
+---------------fold---------------------
+--TODO more config in treesitter: 1. keep fold on startup. 2. fold color
+-- za fold
+-- zo unfold
+keyset('n', 'zR', require('ufo').openAllFolds)
+keyset('n', 'zM', require('ufo').closeAllFolds)
+keyset('n', 'zm', require('ufo').closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+keyset('n', 'K', function()
+    local winid = require('ufo').peekFoldedLinesUnderCursor()
+    if not winid then
+        -- choose one of coc.nvim and nvim lsp
+        vim.fn.CocActionAsync('definitionHover') -- coc.nvim
+        vim.lsp.buf.hover()
+    end
+end)
