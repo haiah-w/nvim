@@ -1,11 +1,10 @@
--- Only required if you have packer configured as `opt`
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- nvim-tree
+    ---------------------------------------nvim-tree
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -16,7 +15,7 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    -- bufferline
+    ---------------------------------------bufferline
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use({
         'noib3/nvim-cokeline',
@@ -29,29 +28,22 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-    -- use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
-    -- use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
-    -- use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-    -- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    -- use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
-    -- coc.nvim
+    ---------------------------------------coc for lsp
     use { 'neoclide/coc.nvim', branch = 'release' }
+    use { 'fatih/vim-go' }
 
-    -- gitsigns
-    use {
-        'lewis6991/gitsigns.nvim',
-        -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
-    }
+    ---------------------------------------gitsigns
+    use { 'lewis6991/gitsigns.nvim' }
 
-    -- colors
-    use 'NvChad/nvim-colorizer.lua' -- color for css
-    use 'xiyaowong/nvim-transparent' -- background
-    -- colorscheme
-    use "rafamadriz/neon"
-    use { "catppuccin/nvim", as = "catppuccin" }
+    ---------------------------------------colors
+    use 'NvChad/nvim-colorizer.lua'
+    use 'xiyaowong/nvim-transparent'
 
-    -- dashboard | session manager
+    ---------------------------------------colorscheme
+    use { "ellisonleao/gruvbox.nvim" }
+
+    ---------------------------------------dashboard | session manager
     use 'glepnir/dashboard-nvim'
     use {
         "lukas-reineke/indent-blankline.nvim",
@@ -69,16 +61,21 @@ return require('packer').startup(function(use)
             }
         end
     }
-    -- terminal
+
+    ---------------------------------------float terminal
     use 'voldikss/vim-floaterm'
 
-    -- telescope search everything
+    ---------------------------------------telescope search everything
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    -- which key
+    -- telescope live_grep require
+    use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
+    ---------------------------------------jwhich key
     use {
         "folke/which-key.nvim",
         config = function()
@@ -89,14 +86,16 @@ return require('packer').startup(function(use)
             }
         end
     }
-    -- comment
+
+    ---------------------------------------comment
     use {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
         end
     }
-    -- todo comments
+
+    ---------------------------------------todo comments
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
@@ -108,5 +107,5 @@ return require('packer').startup(function(use)
             }
         end
     }
-    use { 'fatih/vim-go' }
+
 end)

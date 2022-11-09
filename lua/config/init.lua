@@ -9,6 +9,7 @@ require "config.dashboard"
 require "config.autosession"
 require "config.whichkey"
 require "config.comment"
+require "config.todo-comments"
 
 local keyset = vim.keymap.set
 
