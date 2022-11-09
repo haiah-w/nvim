@@ -1,8 +1,10 @@
 local home = os.getenv("HOME")
 local db = require("dashboard")
--- 需要提前安装好lolcat命令
+-- mac require
 -- db.preview_command = "cat | lolcat -F 0.3"
-db.preview_command = "ueberzug"
+
+-- linux require: python3 sudo pip install ueberzug
+-- db.preview_command = "ueberzug"
 
 db.preview_file_path = home .. "/.config/nvim/neovim.cat"
 db.preview_file_height = 15
@@ -11,8 +13,8 @@ db.session_directory = home .. "/.config/nvim/sessions/"
 db.custom_center = {
     {
         icon = "  ",
-        desc = "Recently latest session                 ",
-        shortcut = "SPC s l",
+        desc = "Recently latest session        ",
+        --shortcut = "",
         action = "SessionLoad",
     },
     -- {
@@ -23,32 +25,32 @@ db.custom_center = {
     -- },
     {
         icon = "  ",
-        desc = "Find  File                              ",
+        desc = "Find  File                    ",
         action = "Telescope find_files find_command=rg,--hidden,--files",
-        shortcut = "SPC f f",
+        --shortcut = "<leader> s f",
     },
     {
         icon = "  ",
-        desc = "File Browser                            ",
+        desc = "File Browser                  ",
         action = "Telescope file_browser",
-        shortcut = "SPC f b",
+        --shortcut = "<leader> f b",
     },
     {
         icon = "  ",
-        desc = "Find  word                              ",
+        desc = "Find  word                    ",
         action = "Telescope live_grep",
-        shortcut = "SPC f w",
+        --shortcut = "<leader> s g",
     },
     {
         icon = "  ",
-        desc = "Edit Personal dotfiles                  ",
-        action = "e ~/.config/nvim/init.vim",
-        shortcut = "SPC f d",
+        desc = "Edit Configure file           ",
+        action = "e ~/.config/nvim/",
+        --shortcut = "<leader> f d",
     },
     {
         icon = "  ",
-        desc = "Quit Neovim                             ",
+        desc = "Quit Neovim                   ",
         action = "qa!",
-        shortcut = "SPC q  ",
-    },
+        --shortcut = "<C-q>  ",
+    }
 }

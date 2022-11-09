@@ -48,9 +48,9 @@ require("todo-comments").setup {
             "--line-number",
             "--column",
         },
-        -- regex that will be used to match kegwords.
-        -- don't replace the (KEYWORDS) placeholder
         pattern = [[\b(KEYWORDS):]], -- ripgrep regex
-        -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
+        --pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
     },
 }
+-- NOTE how to show TODOs
+-- NOTE:  easy motion

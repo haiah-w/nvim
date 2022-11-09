@@ -44,6 +44,7 @@ keyset('n', '<leader>sf', builtin.find_files, {})
 keyset('n', '<leader>sg', builtin.live_grep, {})
 keyset('n', '<leader>sb', builtin.buffers, {})
 keyset('n', '<leader>sh', builtin.help_tags, {})
+keyset('n', '<leader>st', '<Cmd>:TodoTelescope<CR>')
 
 ----------------Go: <leader>g-----------------
 keyset('n', '<leader>gt', '<Cmd>:GoTestFunc<CR>')

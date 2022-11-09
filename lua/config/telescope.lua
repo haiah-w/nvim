@@ -7,7 +7,7 @@ local actions = require "telescope.actions"
 -- only support linux
 -- telescope.load_extension "media_files"
 -- require('telescope').extensions.dap.configurations()
-
+--
 telescope.setup {
     defaults = {
 
@@ -33,7 +33,18 @@ telescope.setup {
         },
         winblend = 0,
         mappings = {
-
+            ["i"] = {
+                -- close when i mode
+                ["<esc>"] = require('telescope.actions').close,
+                ["<C-k>"] = actions.toggle_selection + actions.move_selection_worse,
+                ["<C-j>"] = actions.toggle_selection + actions.move_selection_better,
+            },
+            ["n"] = {
+                -- your custom normal mode mappings
+                ["<esc>"] = require('telescope.actions').close,
+                ["<C-k>"] = actions.toggle_selection + actions.move_selection_worse,
+                ["<C-j>"] = actions.toggle_selection + actions.move_selection_better,
+            },
         },
     },
     pickers = {
@@ -52,17 +63,20 @@ telescope.setup {
         --     filetypes = { "png", "webp", "jpg", "jpeg" },
         --     find_cmd = "rg", -- find command (defaults to `fd`)
         --   },
-        -- file_browser = {
-        --     theme = "ivy",
-        --     mappings = {
-        --       ["i"] = {
-        --         -- your custom insert mode mappings
-        --       },
-        --       ["n"] = {
-        --         -- your custom normal mode mappings
-        --       },
-        --     },
-        --   },
+        file_browser = {
+            --theme = "ivy",
+            mappings = {
+                ["i"] = {
+                    ["<C-k>"] = actions.toggle_selection + actions.move_selection_worse,
+                    ["<C-j>"] = actions.toggle_selection + actions.move_selection_better,
+                },
+                ["n"] = {
+                    -- your custom normal mode mappings
+                    ["<C-k>"] = actions.toggle_selection + actions.move_selection_worse,
+                    ["<C-j>"] = actions.toggle_selection + actions.move_selection_better,
+                },
+            },
+        },
     },
 }
---require("telescope").load_extension "file_browser"
+--require("telescope").load_extension "fi
