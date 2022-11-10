@@ -33,7 +33,8 @@ return require('packer').startup(function(use)
     use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
     use { 'fatih/vim-go' }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-
+    use { 'jiangmiao/auto-pairs' } -- TODO: auto close
+    
     ---------------------------------------gitsigns
     use { 'lewis6991/gitsigns.nvim' }
 
