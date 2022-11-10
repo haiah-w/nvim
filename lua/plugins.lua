@@ -8,18 +8,17 @@ return require('packer').startup(function(use)
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            'nvim-tree/nvim-web-devicons',
         },
-        tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        tag = 'nightly'
     }
-
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-    ---------------------------------------bufferline
+    ---------------------------------------bufferline/statusline
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use({
         'noib3/nvim-cokeline',
-        requires = 'kyazdani42/nvim-web-devicons', -- If you want devicons
+        requires = 'kyazdani42/nvim-web-devicons',
         config = function()
             require('cokeline').setup()
         end
@@ -29,7 +28,7 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    ---------------------------------------coc for lsp
+    ---------------------------------------coc.nvim
     use { 'neoclide/coc.nvim', branch = 'release', run = 'yarn install --frozen-lockfile' }
     use { 'fatih/vim-go' }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
@@ -41,9 +40,7 @@ return require('packer').startup(function(use)
     ---------------------------------------colors
     use 'NvChad/nvim-colorizer.lua'
     use 'xiyaowong/nvim-transparent'
-
-    ---------------------------------------colorscheme
-    use { "ellisonleao/gruvbox.nvim" }
+    use { "ellisonleao/gruvbox.nvim" }  --colorscheme
 
     ---------------------------------------dashboard | session manager
     use 'glepnir/dashboard-nvim'
@@ -64,28 +61,23 @@ return require('packer').startup(function(use)
         end
     }
 
-    ---------------------------------------float terminal
+    ---------------------------------------floaterm
     use 'voldikss/vim-floaterm'
 
-    ---------------------------------------telescope search everything
+    ---------------------------------------telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     -- telescope live_grep require
     use { 'nvim-telescope/telescope-fzf-native.nvim',
         run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
-    ---------------------------------------jwhich key
+    ---------------------------------------which key
     use {
         "folke/which-key.nvim",
         config = function()
-            require("which-key").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("which-key").setup {}
         end
     }
 
@@ -103,19 +95,14 @@ return require('packer').startup(function(use)
             require('neogen').setup {}
         end,
         requires = "nvim-treesitter/nvim-treesitter",
-        -- Uncomment next line if you want to follow only stable versions
-        -- tag = "*"
     }
+    
     ---------------------------------------todo comments
     use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
         config = function()
-            require("todo-comments").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
+            require("todo-comments").setup {}
         end
     }
 
