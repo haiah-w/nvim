@@ -1,0 +1,112 @@
+{
+  // ------------------------------------------------vim
+  "vim.vimrc.enable": true,
+  "vim.vimrc.path": "C:\\Users\\w00623538\\.vimrc",
+  "vim.useSystemClipboard": true, // 打通粘贴板
+  "vim.useCtrlKeys": true,
+  "editor.lineNumbers": "relative",
+  "vim.leader": ";",
+  "vim.easymotion": true,
+  // fasle 为使用vscode快捷键, true vim
+  "vim.handleKeys": {
+    "<C-s>": false,
+    "<C-f>": false,
+    "<C-v>": false,
+    "<C-a>": false,
+    "<C-c>": false,
+    "<A-h>": true,
+  },
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#005f5f",
+  "vim.statusBarColors.insert": "#eb4d4b",
+  "vim.statusBarColors.visual": "#5f00af",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.terminal.killEditor"
+      ],
+      "when": [
+        "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'",
+        "activeEditorGroupEmpty && multipleEditorGroups"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "t",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.terminal.toggleTerminal"
+      ],
+      "when": "terminal.active"
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "t"
+      ],
+      "commands": [
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+  ]
+}
