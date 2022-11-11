@@ -1,0 +1,128 @@
+[
+    {
+        "key": "[g",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "]g",
+        "command": "editor.action.marker.prevInFiles",
+        "when": "editorFocus"
+    },
+    // {
+    //     "key": "ctrl+w k",
+    //     "command": "workbench.action.focusAboveGroup"
+    // },
+    // // 将光标向下动1屏
+    // {
+    //     "key": "ctrl+w j",
+    //     "command": "workbench.action.focusBelowGroup"
+    // },
+    // 将光标向左移动1屏
+    {
+        "key": "ctrl+w h",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    // 将光标向右移动1屏
+    {
+        "key": "ctrl+w l",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl + j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 新建文件
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+    },
+    // 新建目录
+    {
+        "key": "o",
+        "command": "explorer.newFolder",
+        "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+    },
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+    },
+    // 删除文件或目录
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+    },
+    // 剪切文件或目录
+    {
+        "key": "x",
+        "command": "filesExplorer.cut",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    // 复制文件或目录
+    {
+        "key": "y",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    // 粘贴文件或目录
+    {
+        "key": "p",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "h",
+        "command": "workbench.files.action.collapseExplorerFolders",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "]+g",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 移动到上一个建议
+    {
+        "key": "[+g",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    // 格式化代码
+    {
+        "key": "ctrl+shift+l",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    // 放大字体
+    {
+        "key": "ctrl+=",
+        "command": "editor.action.fontZoomIn"
+    },
+    // 缩小字体
+    {
+        "key": "ctrl+-",
+        "command": "editor.action.fontZoomOut"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build",
+        "when": "taskCommandsRegistered"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    }
+]
