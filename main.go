@@ -1,9 +1,8 @@
-package nvim
+package main
 
-func test(a string) int {
-	if a == "xx" {
-		return 2
-	}
+import "fmt"
 
-	return 1
+func main() {
+
+	fmt.Println("hello")
 }

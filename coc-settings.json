@@ -4,16 +4,14 @@
     "suggest.enablePreselect": false,
     "snippets.ultisnips.pythonPrompt": false,
     "Lua.telemetry.enable": false,
-    // go
     "go.goplsOptions": {
-        "completeUnimported": true,
-        "experimentalWorkspaceModule": true
+        "completeUnimported": true
     },
+    "rust-analyzer.enable": true,
     "go.goplsPath": "/home/haiah/go/bin/gopls",
     "snippets.textmateSnippetsRoots": [
         "/home/haiah/.config/nvim/lua/snippets/*.json"
     ],
-    // icon
     "suggest.completionItemKindLabels": {
         "class": "\uf0e8",
         "color": "\ue22b",
@@ -42,6 +40,7 @@
         "variable": "\ue71b"
     },
     "coc.preferences.formatOnSaveFiletypes": [
+        "rust",
         "go",
         "lua",
         "javascript",
@@ -53,12 +52,6 @@
         "jsonc",
         "java",
         "python",
-        "vue",
-        "svelte",
-        "c",
-        "cpp",
-        "cs",
-        "racket",
-        "prisma"
+        "vue"
     ]
 }

@@ -3,6 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+    use 'ryanoasis/vim-devicons'
 
     ---------------------------------------nvim-tree
     use {
@@ -33,14 +34,27 @@ return require('packer').startup(function(use)
     use { 'fatih/vim-go' }
     use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
     use { 'jiangmiao/auto-pairs' } -- TODO: auto close
-    
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
+    }
+    -- debuger
+    use { "ravenxrz/DAPInstall.nvim" } -- help us install several debuggers
+    use "ravenxrz/nvim-dap"
+    use "theHamsta/nvim-dap-virtual-text"
+    use "rcarriga/nvim-dap-ui"
+
     ---------------------------------------gitsigns
     use { 'lewis6991/gitsigns.nvim' }
 
     ---------------------------------------colors
     use 'NvChad/nvim-colorizer.lua'
     use 'xiyaowong/nvim-transparent'
-    use { "ellisonleao/gruvbox.nvim" }  --colorscheme
+    use { "ellisonleao/gruvbox.nvim" } --colorscheme
 
     ---------------------------------------dashboard | session manager
     use 'glepnir/dashboard-nvim'
@@ -56,7 +70,8 @@ return require('packer').startup(function(use)
         config = function()
             require("auto-session").setup {
                 log_level = "error",
-                auto_session_suppress_dirs = { "~/", "~/code", "~/Project" },
+                auto_session_suppress_dirs = { "~/code" },
+                sections = { lualine_c = { require('auto-session-library').current_session_name } }
             }
         end
     }
@@ -96,7 +111,7 @@ return require('packer').startup(function(use)
         end,
         requires = "nvim-treesitter/nvim-treesitter",
     }
-    
+
     ---------------------------------------todo comments
     use {
         "folke/todo-comments.nvim",

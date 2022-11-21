@@ -3,10 +3,10 @@ local db = require("dashboard")
 -- mac require
 -- db.preview_command = "cat | lolcat -F 0.3"
 
+-- sudo apt install python3-dev libx11-dev libxext-dev
 -- linux require: python3 sudo pip install ueberzug
 -- db.preview_command = "ueberzug"
-
-db.preview_file_path = home .. "/.config/nvim/neovim.cat"
+-- db.preview_file_path = home .. "/.config/nvim/neovim.cat"
 db.preview_file_height = 15
 db.preview_file_width = 70
 db.session_directory = home .. "/.config/nvim/sessions/"
@@ -30,14 +30,8 @@ db.custom_center = {
         --shortcut = "<leader> s f",
     },
     {
-        icon = "  ",
-        desc = "File Browser                  ",
-        action = "Telescope file_browser",
-        --shortcut = "<leader> f b",
-    },
-    {
         icon = "  ",
-        desc = "Find  word                    ",
+        desc = "Find  Keyword                 ",
         action = "Telescope live_grep",
         --shortcut = "<leader> s g",
     },
@@ -53,4 +47,20 @@ db.custom_center = {
         action = "qa!",
         --shortcut = "<C-q>  ",
     }
+}
+db.default_banner = {
+    '',
+    '',
+    '',
+    '                                        ▟▙            ',
+    '                                        ▝▘            ',
+    '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+    '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+    '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+    '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+    '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+    '',
+    '',
+    '',
+    '',
 }

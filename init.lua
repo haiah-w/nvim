@@ -1,13 +1,11 @@
--- basic setting
-require "core.init"
-
--- plugins
+vim.api.nvim_command('source ~/.vimrc')
+require "keymaps"
 require "plugins"
-require "config.init"
-
--- colors
-require "colors.init"
-
+require "colors"
+require "config"
 -- coc extension
 require "config.coc"
--- TODO auto install coc-extensions
+-- require "dap"
+
+-- TODO: auto install coc-extensions
+-- TODO: lazy load
